@@ -1,0 +1,50 @@
+﻿@model BookStore.Models.Book
+
+<h2>Details Page</h2>
+
+<div>
+    <h4>Author</h4><hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(book=>book.Id)
+        </dt>
+  
+        <dt>
+            @Html.DisplayFor(book => book.Id)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(book => book.Title)
+        </dt>
+        <dt>
+            @Html.DisplayFor(book => book.Title)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(book => book.Description)
+        </dt>
+        <dt>
+            @Html.DisplayFor(book => book.Description)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(book => book.Author.FulName)
+        </dt>
+        <dt>
+            @Html.DisplayFor(book => book.Author.FulName)
+        </dt>
+        <dt>
+            Image:
+        </dt>
+        <td>
+            @if (Model.ImgUrl != null)
+            {
+                <img src="~/uploads/@Model.ImgUrl" alt="Image for book" style="width:50px;height:50px;" class="img-thumbnail" />
+            }
+        </td>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-info">Back</a>
+</div>
+
+
+

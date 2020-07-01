@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+<h2>Index Page</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(b => b.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(b => b.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(b => b.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(b => b.Author.FulName)
+            </th>
+            <th>
+                Image
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(item => book.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => book.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => book.Author.FulName)
+                </td>
+                <td>
+                    @if (book.ImgUrl !=null) {
+                    <img src="~/uploads/@book.ImgUrl" alt="Image for book" style="width:50px;height:50px;" class="img-thumbnail"/>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = book.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = book.Id })|
+                    @Html.ActionLink("Delete", "Delete", new { id = book.Id })
+
+
+                </td>
+            </tr>
+
+
+
+        }
+    </tbody>
+</table>

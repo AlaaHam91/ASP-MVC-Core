@@ -1,0 +1,44 @@
+﻿@model BookStore.Models.Book
+
+<h2>Details Page</h2>
+
+<div>
+    <h4>Book</h4><hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(book => book.Id)
+        </dt>
+
+        <dt>
+            @Html.DisplayFor(book => book.Id)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(book => book.Title)
+        </dt>
+        <dt>
+            @Html.DisplayFor(book => book.Title)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(book => book.Description)
+        </dt>
+        <dt>
+            @Html.DisplayFor(book => book.Description)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(book => book.Author)
+        </dt>
+        <dt>
+            @Html.DisplayFor(book => book.Author)
+        </dt>
+    </dl>
+</div>
+<div>
+    <form class="form-group" asp-action="ConfirmDelete" asp-route-id="@Model.Id">
+        <input type="submit"  value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-outline-info">Back</a>
+    </form>
+
+</div>
+
+
+

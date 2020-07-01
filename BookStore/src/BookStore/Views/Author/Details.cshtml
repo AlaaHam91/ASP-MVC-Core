@@ -1,0 +1,29 @@
+﻿@model BookStore.Models.Author
+
+<h2>Details Page</h2>
+
+<div>
+    <h4>Author</h4><hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(author=>author.Id)
+        </dt>
+  
+        <dt>
+            @Html.DisplayFor(author => author.Id)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(author => author.FulName)
+        </dt>
+        <dt>
+            @Html.DisplayFor(author => author.FulName)
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-info">Back</a>
+</div>
+
+
+
